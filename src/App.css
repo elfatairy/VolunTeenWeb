@@ -1,0 +1,173 @@
+#root {
+  max-width: 1280px;
+  width: 100vw;
+  margin: 0 auto;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/**************  NAVBAR *********************/
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.nav-left img {
+  width: 30px;
+  height: 30px;
+}
+
+.title {
+  font-size: 1.2rem;
+  color: #000
+}
+
+.nav-btn {
+  background-color: #00613a;
+  color: #fff;
+  border-radius: 24px;
+  /* padding: 5px 10px; */
+  padding: 1em 1.6em;
+  font-size: 0.7em;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+/************* Landing *****************/
+
+.landing {
+  box-sizing: border-box;
+  min-height: 100vh;
+  width: 100%;
+}
+
+
+/**** hero ****/
+
+.hero {
+  color: #000;
+  padding-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: 700;
+  width: 400px;
+  text-align: center;
+  line-height: 2.3rem;
+}
+
+.download-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 12px 26px;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #F87D9C
+}
+
+.btn-txt {
+  display: flex;
+  gap: 5;
+  flex-direction: column;
+  align-items: start;
+}
+
+.btn-txt-1 {
+  font-size: 0.6rem;
+}
+.btn-txt-2 {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+/******* Services ************/
+.services {
+  margin-top: 150px;
+  background-color: #872c43;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  padding: 50px 80px;
+  padding: 25px;
+}
+
+.services > * {
+  flex: 1
+}
+
+.services img {
+  width: 200px;
+  margin-top: -120px;
+}
+
+.services ul {
+  list-style: none;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.services ul li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  gap: 15px;
+}
+
+.services ul li span {
+  line-height: 1rem;
+}
