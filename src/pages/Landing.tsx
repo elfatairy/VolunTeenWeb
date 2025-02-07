@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar'
 import { motion, useInView, useScroll, useSpring, useTransform } from 'motion/react';
 import { useTranslation } from 'react-i18next';
@@ -156,7 +156,6 @@ function Landing() {
             <Hero />
             <Services />
             <Joining />
-            <Services />
         </div>
     )
 }
