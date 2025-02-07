@@ -1,4 +1,10 @@
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import LanguageToggle from "./LanguageToggle";
+
 function Navbar() {
+    const { t } = useTranslation();
+
     return (
         <nav>
             <div className='nav-left'>
@@ -6,7 +12,8 @@ function Navbar() {
                 <h1 className='title'>VolunTeen</h1>
             </div>
             <div className='nav-right'>
-                <button className='nav-btn'>Download app</button>
+                <button className='nav-btn'>{t("Download-app")}</button>
+                <LanguageToggle />
             </div>
         </nav>
     )

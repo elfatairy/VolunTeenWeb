@@ -42,13 +42,20 @@
   color: #888;
 }
 
+.ar * {
+  direction: rtl;
+}
+
 
 /**************  NAVBAR *********************/
 
 nav {
+  position: fixed;
+  width: calc(1280px - 1.6rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 10;
 }
 
 .nav-left {
@@ -62,21 +69,62 @@ nav {
   height: 30px;
 }
 
-.title {
+nav .title {
   font-size: 1.2rem;
+  mix-blend-mode:color-burn;
   color: #000
 }
 
+.nav-right {
+  display: flex;
+  gap: 10px
+}
+
 .nav-btn {
-  background-color: #00613a;
+  background-color: #002060;
   color: #fff;
   border-radius: 24px;
   /* padding: 5px 10px; */
   padding: 1em 1.6em;
-  font-size: 0.7em;
+  font-size: 0.8em;
   font-weight: 500;
   font-family: inherit;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out
 }
+
+.nav-btn:hover {
+  background-color: #133b8a;
+}
+
+.language-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.language-toggle:hover {
+  background-color: #f0f0f0;
+}
+
+.language-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.language-icon {
+  width: 20px;
+  height: 20px;
+}
+
 
 /************* Landing *****************/
 
@@ -99,9 +147,9 @@ nav {
 }
 
 .hero-title {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  width: 400px;
+  width: 500px;
   text-align: center;
   line-height: 2.3rem;
 }
@@ -110,10 +158,11 @@ nav {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  padding: 12px 26px;
+  padding: 8px 14px;
   align-items: center;
-  border-radius: 20px;
-  background-color: #F87D9C
+  border-radius: 8px;
+  background-color: #0f0f0d;
+  cursor: pointer;
 }
 
 .btn-txt {
@@ -121,25 +170,32 @@ nav {
   gap: 5;
   flex-direction: column;
   align-items: start;
+  color: #fff
 }
 
 .btn-txt-1 {
-  font-size: 0.6rem;
+  font-size: 0.8rem;
 }
 .btn-txt-2 {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: 700;
+}
+.ar .btn-txt-1 {
+  font-size: 0.7rem;
+}
+.ar .btn-txt-2 {
+  font-size: 1.2rem;
 }
 
 /******* Services ************/
 .services {
   margin-top: 150px;
-  background-color: #872c43;
+  background-color: #002060;
   border-radius: 25px;
   display: flex;
   align-items: center;
   padding: 50px 80px;
-  padding: 25px;
+  gap: 25px;
 }
 
 .services > * {
@@ -147,7 +203,7 @@ nav {
 }
 
 .services img {
-  width: 200px;
+  width: 400px;
   margin-top: -120px;
 }
 
@@ -171,3 +227,179 @@ nav {
 .services ul li span {
   line-height: 1rem;
 }
+
+/************* Joining **************/
+
+.joining {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.joining h2 {
+  color: #000;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.parallax-container {
+  height: 2500px;
+  position: relative;
+}
+
+.parallax {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-direction: column;
+  position: sticky;
+  top: 20px;
+  padding-top: 20px;
+}
+
+.joining .scroller {
+  width: 100vw;
+  box-sizing: border-box;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.joining .scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.joining ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 10vw;
+  display: flex;
+  right: calc(80vw * 2 + 50px * 2);
+  position: relative;
+  gap: 50px;
+}
+
+.ar .joining ul {
+  right: auto !important;
+}
+.en .joining ul {
+  left: auto !important;
+}
+
+.joining ul li {
+}
+
+.joining ul li .item {
+  width: 80vw;
+  height: 500px;
+  border-radius: 40px;
+  padding: 20px 80px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: start;
+}
+
+.joining ul li:nth-child(1) .item {
+  background-color: #fc8833;
+  /* margin-left: 10vw; */
+}
+
+.joining ul li:nth-child(2) .item {
+  background-color: #00708b;
+}
+
+.joining ul li:nth-child(3) .item {
+  background-color: #00613a;
+}
+
+.en .joining ul li:last-child {
+  padding-right: 10vw;
+}
+
+.ar .joining ul li:last-child {
+  padding-left: 10vw;
+}
+
+.joining ul li .index {
+  position: absolute;
+  top: 20px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.ar .joining ul li .index {
+  right: 20px;
+}
+
+.en .joining ul li .index {
+  left: 20px;
+}
+
+.joining ul li:nth-child(1) .index {
+  color: #fc8833;
+}
+
+.joining ul li:nth-child(2) .index {
+  color: #00708b;
+}
+
+.joining ul li:nth-child(3) .index {
+  color: #00613a;
+}
+
+.joining ul li .text {
+  z-index: 2;
+}
+
+.joining ul li h3 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.joining ul li p {
+  font-size: 1rem;
+  color: #f0f0f0
+}
+
+.joining ul li .blob {
+  position: absolute;
+  top: 0px;
+  width: 900px;
+  transform: rotate(180deg);
+  z-index: 1;
+}
+
+.ar .joining ul li .blob {
+  left: -300px;
+}
+
+.en .joining ul li .blob {
+  right: -300px;
+}
+
+.joining ul li img {
+  width: 300px;
+  margin: 0 20px;
+  position: relative;
+  top: 150px;
+  z-index: 2;
+}
+
+
+
+

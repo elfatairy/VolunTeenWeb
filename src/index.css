@@ -15,6 +15,10 @@ body {
   background-color: #eae9e5;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 button {
   outline: none;
   border: none;
@@ -22,6 +26,7 @@ button {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
+  
 }
 
 a {
@@ -40,4 +45,18 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  padding-right: 5px;
+  background-color: #aaa; /* or add it to the track */
+}
+
+/* Add a thumb */
+*::-webkit-scrollbar-thumb {
+  background: #002060;
+  border-radius: 10px;
 }
