@@ -12,6 +12,7 @@ function Hero() {
         <div className='download-btns'>
             <button className='download-btn'>
                 <svg width="25px" height="25px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="mask0_87_8320" style={{ "maskType": "alpha" }} maskUnits="userSpaceOnUse" x="7" y="3" width="24" height="26"><path d="M30.0484 14.4004C31.3172 15.0986 31.3172 16.9014 30.0484 17.5996L9.75627 28.7659C8.52052 29.4459 7 28.5634 7 27.1663L7 4.83374C7 3.43657 8.52052 2.55415 9.75627 3.23415L30.0484 14.4004Z" fill="#C4C4C4" /></mask><g mask="url(#mask0_87_8320)"><path d="M7.63473 28.5466L20.2923 15.8179L7.84319 3.29883C7.34653 3.61721 7 4.1669 7 4.8339V27.1664C7 27.7355 7.25223 28.2191 7.63473 28.5466Z" fill="url(#paint0_linear_87_8320)" /><path d="M30.048 14.4003C31.3169 15.0985 31.3169 16.9012 30.048 17.5994L24.9287 20.4165L20.292 15.8175L24.6923 11.4531L30.048 14.4003Z" fill="url(#paint1_linear_87_8320)" /><path d="M24.9292 20.4168L20.2924 15.8179L7.63477 28.5466C8.19139 29.0232 9.02389 29.1691 9.75635 28.766L24.9292 20.4168Z" fill="url(#paint2_linear_87_8320)" /><path d="M7.84277 3.29865L20.2919 15.8177L24.6922 11.4533L9.75583 3.23415C9.11003 2.87878 8.38646 2.95013 7.84277 3.29865Z" fill="url(#paint3_linear_87_8320)" /></g><defs><linearGradient id="paint0_linear_87_8320" x1="15.6769" y1="10.874" x2="7.07106" y2="19.5506" gradientUnits="userSpaceOnUse"><stop stopColor="#00C3FF" /><stop offset="1" stopColor="#1BE2FA" /></linearGradient><linearGradient id="paint1_linear_87_8320" x1="20.292" y1="15.8176" x2="31.7381" y2="15.8176" gradientUnits="userSpaceOnUse"><stop stopColor="#FFCE00" /><stop offset="1" stopColor="#FFEA00" /></linearGradient><linearGradient id="paint2_linear_87_8320" x1="7.36932" y1="30.1004" x2="22.595" y2="17.8937" gradientUnits="userSpaceOnUse"><stop stopColor="#DE2453" /><stop offset="1" stopColor="#FE3944" /></linearGradient><linearGradient id="paint3_linear_87_8320" x1="8.10725" y1="1.90137" x2="22.5971" y2="13.7365" gradientUnits="userSpaceOnUse"><stop stopColor="#11D574" /><stop offset="1" stopColor="#01F176" /></linearGradient></defs></svg>
+
                 <div className='btn-txt'>
                     <span className='btn-txt-1'>{t("Get-it-on")}</span>
                     <span className='btn-txt-2'>{t("Google-Play")}</span>
@@ -73,7 +74,7 @@ function Joining() {
 
     const { innerWidth: width } = window;
 
-    const scrollX = useTransform(scrollYProgress, [0, 1], [0, 1.8 * width + 100])
+    const scrollX = useTransform(scrollYProgress, [.1, 0.9], [0, 1.8 * width + 100])
     const springedScrollX = useSpring(scrollX);
     const { t } = useTranslation();
 
@@ -86,7 +87,7 @@ function Joining() {
     }, [ulRef.current])
 
     return <div className='joining'>
-        <div className='' ref={imgRef}>
+        <div className='joining-img' ref={imgRef}>
             <motion.img
                 animate={{ scale: isImgInView ? 1 : 0.8 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
@@ -100,7 +101,46 @@ function Joining() {
                     <AnimatedTitle delay={0.3}>{t("from-joining-VolunTeen")}</AnimatedTitle>
                 </h2>
                 <div className='scroller'>
-                    <motion.ul style={{ right: springedScrollX, left: springedScrollX }} ref={ulRef}>    <li>        <div className='item'>            <div className='index'><span>01</span></div>            <span className='blob'>                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#d3691e" d="M37.1,-42.5C50.5,-41.3,65.4,-33.7,71.4,-21.7C77.4,-9.6,74.5,6.8,70.9,24.6C67.3,42.4,63,61.6,51,69.5C39.1,77.5,19.6,74.2,7.4,64C-4.7,53.8,-9.5,36.7,-19.9,28.2C-30.3,19.8,-46.3,20,-55.1,13.1C-63.9,6.2,-65.5,-7.8,-59.1,-16.7C-52.7,-25.5,-38.4,-29.3,-27.2,-31.2C-16,-33.1,-8,-33.2,1.9,-35.8C11.9,-38.5,23.7,-43.7,37.1,-42.5Z" transform="translate(100 100)" /></svg>            </span>            <div className='text'>                <h3>{t("Create-your-profile")}</h3>                <p>{t("Sign-up-and-create-your-profile.-Tell-us-a-bit-about-yourself-and-create-credentials-that-you-will-use-later-to-login.")}</p>            </div>            <img src='phone1.png' />        </div>    </li>    <li>        <div className='item'>            <div className='index'><span>02</span></div>            <span className='blob'>                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#3097d1" d="M20.1,-39.1C24.5,-24.5,25.4,-16.5,36.2,-6.3C46.9,3.9,67.6,16.3,71.9,29.7C76.3,43.1,64.3,57.6,49.6,67.9C34.9,78.2,17.5,84.2,2.8,80.3C-11.8,76.5,-23.7,62.6,-32,50.3C-40.4,38,-45.4,27.2,-49.4,15.8C-53.5,4.4,-56.6,-7.5,-54.8,-19.3C-53,-31.1,-46.2,-42.7,-36.3,-55.5C-26.3,-68.4,-13.2,-82.4,-2.6,-78.8C7.9,-75.1,15.7,-53.8,20.1,-39.1Z" transform="translate(100 100)" /></svg>            </span>            <div className='text'>                <h3>{t("Choose-account-type")}</h3>                <p>{t("Select-the-account-type-that-best-suits-you.-Whether-you’re-a-teenager-looking-for-flexible-volunteer-based-work-with-additional-income-or-a-customer-in-need-of-assistance-with-everyday-tasks-like-senior-care,-childcare,-pet-care,-or deliveries, our platform connects you with the right opportunities.")}</p>            </div>            <img src='phone2.png' />        </div>    </li>    <li>        <div className='item'>            <div className='index'><span>03</span></div>            <span className='blob'>                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#97db80" d="M37.1,-42.5C50.5,-41.3,65.4,-33.7,71.4,-21.7C77.4,-9.6,74.5,6.8,70.9,24.6C67.3,42.4,63,61.6,51,69.5C39.1,77.5,19.6,74.2,7.4,64C-4.7,53.8,-9.5,36.7,-19.9,28.2C-30.3,19.8,-46.3,20,-55.1,13.1C-63.9,6.2,-65.5,-7.8,-59.1,-16.7C-52.7,-25.5,-38.4,-29.3,-27.2,-31.2C-16,-33.1,-8,-33.2,1.9,-35.8C11.9,-38.5,23.7,-43.7,37.1,-42.5Z" transform="translate(100 100)" /></svg>            </span>            <div className='text'>                <h3>{t("Do-Your-First-Action")}</h3>                <p>{t("Start-making-a-difference!-Whether-you’re-offering-help-or-requesting-assistance,-take-your-first-step-on-the-platform.-Find-tasks-that-match-your-skills,-volunteer-to-support-others,-or-request-services-that-simplify-your-daily-life.-You-can-also-donate-unused-items-to-those-in-need-or-connect-with-specialists-in-various-fields-for-guidance.")}</p>            </div>            <img src='phone3.png' />        </div>    </li>
+                    <motion.ul style={{ right: springedScrollX, left: springedScrollX }} ref={ulRef}>
+                        <li>
+                            <div className='item'>
+                                <div className='index'><span>01</span></div>
+                                <span className='blob'>
+                                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#d3691e" d="M37.1,-42.5C50.5,-41.3,65.4,-33.7,71.4,-21.7C77.4,-9.6,74.5,6.8,70.9,24.6C67.3,42.4,63,61.6,51,69.5C39.1,77.5,19.6,74.2,7.4,64C-4.7,53.8,-9.5,36.7,-19.9,28.2C-30.3,19.8,-46.3,20,-55.1,13.1C-63.9,6.2,-65.5,-7.8,-59.1,-16.7C-52.7,-25.5,-38.4,-29.3,-27.2,-31.2C-16,-33.1,-8,-33.2,1.9,-35.8C11.9,-38.5,23.7,-43.7,37.1,-42.5Z" transform="translate(100 100)" /></svg>
+                                </span>
+                                <div className='text'>
+                                    <h3>{t("Create-your-profile")}</h3>
+                                    <p>{t("Sign-up-and-create-your-profile.-Tell-us-a-bit-about-yourself-and-create-credentials-that-you-will-use-later-to-login.")}</p>
+                                </div>
+                                <img src='phone1.png' />
+                            </div>
+                        </li>
+                        <li>
+                            <div className='item'>
+                                <div className='index'><span>02</span></div>
+                                <span className='blob'>
+                                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#3097d1" d="M20.1,-39.1C24.5,-24.5,25.4,-16.5,36.2,-6.3C46.9,3.9,67.6,16.3,71.9,29.7C76.3,43.1,64.3,57.6,49.6,67.9C34.9,78.2,17.5,84.2,2.8,80.3C-11.8,76.5,-23.7,62.6,-32,50.3C-40.4,38,-45.4,27.2,-49.4,15.8C-53.5,4.4,-56.6,-7.5,-54.8,-19.3C-53,-31.1,-46.2,-42.7,-36.3,-55.5C-26.3,-68.4,-13.2,-82.4,-2.6,-78.8C7.9,-75.1,15.7,-53.8,20.1,-39.1Z" transform="translate(100 100)" /></svg>
+                                </span>
+                                <div className='text'>
+                                    <h3>{t("Choose-account-type")}</h3>
+                                    <p>{t("Select-the-account-type-that-best-suits-you.-Whether-you’re-a-teenager-looking-for-flexible-volunteer-based-work-with-additional-income-or-a-customer-in-need-of-assistance-with-everyday-tasks-like-senior-care,-childcare,-pet-care,-or deliveries, our platform connects you with the right opportunities.")}</p>
+                                </div>
+                                <img src='phone2.png' />
+                            </div>
+                        </li>
+                        <li>
+                            <div className='item'>
+                                <div className='index'><span>03</span></div>
+                                <span className='blob'>
+                                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#97db80" d="M37.1,-42.5C50.5,-41.3,65.4,-33.7,71.4,-21.7C77.4,-9.6,74.5,6.8,70.9,24.6C67.3,42.4,63,61.6,51,69.5C39.1,77.5,19.6,74.2,7.4,64C-4.7,53.8,-9.5,36.7,-19.9,28.2C-30.3,19.8,-46.3,20,-55.1,13.1C-63.9,6.2,-65.5,-7.8,-59.1,-16.7C-52.7,-25.5,-38.4,-29.3,-27.2,-31.2C-16,-33.1,-8,-33.2,1.9,-35.8C11.9,-38.5,23.7,-43.7,37.1,-42.5Z" transform="translate(100 100)" /></svg>
+                                </span>
+                                <div className='text'>
+                                    <h3>{t("Do-Your-First-Action")}</h3>
+                                    <p>{t("Start-making-a-difference!-Whether-you’re-offering-help-or-requesting-assistance,-take-your-first-step-on-the-platform.-Find-tasks-that-match-your-skills,-volunteer-to-support-others,-or-request-services-that-simplify-your-daily-life.-You-can-also-donate-unused-items-to-those-in-need-or-connect-with-specialists-in-various-fields-for-guidance.")}</p>
+                                </div>
+                                <img src='phone3.png' />
+                            </div>
+                        </li>
                     </motion.ul>
                 </div>
             </div>
@@ -111,17 +151,17 @@ function Joining() {
 const Service = ({ scrollYProgress, start, end, bg, isBig = false }: { scrollYProgress: any, start: Array<number>, end: Array<number>, bg: string, isBig?: boolean }) => {
     const positionX = useTransform(scrollYProgress, [0.5, 0.6], [start[0], end[0]]);
     const positionY = useTransform(scrollYProgress, [0.5, 0.6], [start[1], end[1]]);
-    
+
     const springedPositionX = useSpring(positionX);
     const springedPositionY = useSpring(positionY);
 
-    return <motion.div 
-        className={`service ${isBig ? 'big' : ''}`} 
+    return <motion.div
+        className={`service ${isBig ? 'big' : ''}`}
         style={{ top: springedPositionY, left: springedPositionX, backgroundImage: `url("${bg}")` }} />
 }
 
 const Services = ({ servicesRef }: { servicesRef: MutableRefObject<null | HTMLDivElement> }) => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const { scrollYProgress } = useScroll({ target: servicesRef, offset: ['start end', 'end end'] });
     const secondBlockY = useTransform(scrollYProgress, [0, 1], [0, -400]);
     const secondBlockHeight = useTransform(scrollYProgress, [0, 1], [window.innerHeight, window.innerHeight - 399]);
@@ -142,40 +182,40 @@ const Services = ({ servicesRef }: { servicesRef: MutableRefObject<null | HTMLDi
             <div>
                 <Service
                     scrollYProgress={scrollYProgress}
-                    start={[window.innerWidth / 2 - 200, window.innerHeight / 2 - 180]}
-                    end={[window.innerWidth / 2 - 360, window.innerHeight / 2 - 300]}
+                    start={[window.innerWidth / 2.7, window.innerHeight / 4.61]}
+                    end={[window.innerWidth / 3.76, window.innerHeight / 9]}
                     bg={"img2.jpg"}
                     isBig={true} />
                 <Service scrollYProgress={scrollYProgress}
-                    start={[window.innerWidth / 2 - 150, window.innerHeight / 2 - 50]}
-                    end={[window.innerWidth / 2 - 650, window.innerHeight / 2 - 80]}
+                    start={[window.innerWidth / 2.49, window.innerHeight / 2.14]}
+                    end={[window.innerWidth / 13, window.innerHeight / 4]}
                     bg="img1.jpg" />
                 <Service scrollYProgress={scrollYProgress}
-                    start={[window.innerWidth / 2 - 230, window.innerHeight / 2 + 50]}
-                    end={[window.innerWidth / 2 - 570, window.innerHeight / 2 + 130]}
+                    start={[window.innerWidth / 2.855, window.innerHeight / 1.88]}
+                    end={[window.innerWidth / 7.76, window.innerHeight / 1.71]}
                     bg="img4.jpg"
                     isBig={true} />
                 <Service scrollYProgress={scrollYProgress}
-                    start={[window.innerWidth / 2 - 50, window.innerHeight / 2 + 100]}
-                    end={[window.innerWidth / 2 - 240, window.innerHeight / 2 + 160]}
+                    start={[window.innerWidth / 2.14, window.innerHeight / 1.77]}
+                    end={[window.innerWidth / 2.9, window.innerHeight / 1.4]}
                     bg="img3.jpg" />
                 <Service scrollYProgress={scrollYProgress}
-                    start={[window.innerWidth / 2 + 50, window.innerHeight / 2]}
-                    end={[window.innerWidth / 2 + 180, window.innerHeight / 2 + 150]}
+                    start={[window.innerWidth / 1.88, window.innerHeight / 2]}
+                    end={[window.innerWidth / 1.62, window.innerHeight / 1.5]}
                     bg="img5.jpg"
                     isBig={true} />
                 <Service scrollYProgress={scrollYProgress}
-                    start={[window.innerWidth / 2 + 20, window.innerHeight / 2 - 150]}
-                    end={[window.innerWidth / 2 + 50, window.innerHeight / 2 - 250]}
+                    start={[window.innerWidth / 1.95, window.innerHeight / 2.49]}
+                    end={[window.innerWidth / 1.88, window.innerHeight / 6]}
                     bg="img7.jpg" />
                 <Service scrollYProgress={scrollYProgress}
-                    start={[window.innerWidth / 2, window.innerHeight / 2 - 20]}
-                    end={[window.innerWidth / 2 + 450, window.innerHeight / 2 - 180]}
+                    start={[window.innerWidth / 2, window.innerHeight / 2.05]}
+                    end={[window.innerWidth / 1.26, window.innerHeight / 4]}
                     bg="img6.jpg"
                     isBig={true} />
                 <Service scrollYProgress={scrollYProgress}
-                    start={[window.innerWidth / 2 - 20, window.innerHeight / 2 - 120]}
-                    end={[window.innerWidth / 2 + 400, window.innerHeight / 2 - 20]}
+                    start={[window.innerWidth / 2.05, window.innerHeight / 2.37]}
+                    end={[window.innerWidth / 1.32, window.innerHeight / 2.05]}
                     bg="img8.jpg" />
             </div>
         </motion.div>

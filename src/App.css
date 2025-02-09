@@ -12,9 +12,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -23,6 +25,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -50,13 +53,17 @@
 /**************  NAVBAR *********************/
 
 nav {
+  width: 100vw;
   position: fixed;
+  z-index: 10;
+}
+
+.nav-container {
   width: 90vw;
   margin-left: 5vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
 }
 
 .nav-left {
@@ -72,7 +79,7 @@ nav {
 
 nav .title {
   font-size: 1.2rem;
-  mix-blend-mode:color-burn;
+  mix-blend-mode: color-burn;
   color: #000
 }
 
@@ -103,7 +110,7 @@ nav .title {
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  font-size: 16px;
+  font-size: 0.8em;
   color: #333;
   background-color: #fff;
   border: 1px solid #ccc;
@@ -126,6 +133,25 @@ nav .title {
   height: 20px;
 }
 
+@media screen and (max-width: 415px) {
+
+  .nav-btn,
+  .language-toggle {
+    font-size: 0.7em;
+  }
+
+  .language-icon {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .nav-btn {
+    display: none;
+  }
+
+}
 
 /************* Landing *****************/
 
@@ -151,7 +177,7 @@ nav .title {
 .hero-title {
   font-size: 2.2rem;
   font-weight: 700;
-  width: 500px;
+  width: min(500px, 95vw);
   text-align: center;
   line-height: 2.3rem;
 }
@@ -178,15 +204,30 @@ nav .title {
 .btn-txt-1 {
   font-size: 0.8rem;
 }
+
 .btn-txt-2 {
   font-size: 0.9rem;
   font-weight: 700;
 }
+
 .ar .btn-txt-1 {
   font-size: 0.7rem;
 }
+
 .ar .btn-txt-2 {
   font-size: 1.2rem;
+}
+
+@media screen and (max-width: 415px) {
+  .hero-title {
+    font-size: 1.8rem;
+    width: 90vw;
+  }
+
+  .hero {
+    padding-top: 15vh;
+  }
+
 }
 
 /******* About ************/
@@ -203,7 +244,7 @@ nav .title {
   margin-left: 5vw;
 }
 
-.about > * {
+.about>* {
   flex: 1
 }
 
@@ -218,7 +259,7 @@ nav .title {
   display: flex;
   flex-direction: column;
   padding: 0;
-  margin: 0; 
+  margin: 0;
 }
 
 .about ul li {
@@ -231,6 +272,29 @@ nav .title {
 
 .about ul li span {
   line-height: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .about .left {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 40px 30px;
+  }
+
+  .about img {
+    width: 260px;
+    margin-top: -90px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .about {
+    flex-direction: column;
+  }
 }
 
 /************* Joining **************/
@@ -248,7 +312,7 @@ nav .title {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 40px;
-  width: 600px;
+  width: min(600px, 95vw);
   display: flex;
   flex-direction: column;
   line-height: 1.2;
@@ -266,7 +330,7 @@ nav .title {
   flex-direction: column;
   position: sticky;
   top: 20px;
-  padding-top: 20px;
+  padding-top: 10vh
 }
 
 .joining .scroller {
@@ -285,7 +349,6 @@ nav .title {
   margin: 0;
   padding: 0 5vw;
   display: flex;
-  right: calc(80vw * 2 + 50px * 2);
   position: relative;
   gap: 50px;
 }
@@ -293,16 +356,16 @@ nav .title {
 .ar .joining ul {
   right: auto !important;
 }
+
 .en .joining ul {
   left: auto !important;
 }
 
-.joining ul li {
-}
+.joining ul li {}
 
 .joining ul li .item {
   width: 90vw;
-  height: 500px;
+  height: 65vh;
   border-radius: 40px;
   padding: 20px 80px;
   display: flex;
@@ -369,6 +432,7 @@ nav .title {
 
 .joining ul li .text {
   z-index: 2;
+  flex: 1;
 }
 
 .joining ul li h3 {
@@ -378,7 +442,8 @@ nav .title {
 
 .joining ul li p {
   font-size: 1rem;
-  color: #f0f0f0
+  color: #f0f0f0;
+  width: 700px
 }
 
 .joining ul li .blob {
@@ -405,6 +470,86 @@ nav .title {
   z-index: 2;
 }
 
+@media screen and (max-width: 1025px) {
+  .joining .joining-img {
+    margin-top: 50px;
+  }
+
+  .joining .joining-img img {
+    width: 60vw
+  }
+
+  .parallax {
+    padding-top: 10vh
+  }
+
+  .joining ul li p {
+    width: 300px;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .joining ul li .item {
+    padding: 20px 40px;
+    padding-inline-end: 0;
+    gap: 0;
+  }
+
+  .joining ul li .blob {
+    display: none;
+  }
+
+  .joining ul li h3,
+  .joining ul li p {
+    width: 100%;
+  }
+  
+  .joining ul li img {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .joining ul li .item {
+    padding: 80px 40px;
+  }
+  .joining ul li p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .joining .joining-img img {
+    width: 80vw
+  }
+  
+  .joining h2 {
+    font-size: 1.9rem;
+  }
+
+  .joining ul li .item {
+    height: 70vh;
+    flex-direction: column;
+    padding: 80px 40px;
+    gap: 20px
+  }
+
+  .joining ul li img {
+    top: 0;
+  }
+
+  .joining ul li p {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .joining h2 {
+    font-size: 1.5rem;
+  }
+
+}
 
 /****** Services **********/
 
@@ -442,4 +587,29 @@ nav .title {
 .services .service.big {
   width: 150px;
   height: 150px;
+}
+
+@media screen and (max-width: 1024px) {
+  .services .body {
+    width: 410px
+  }
+
+  .services .body h2 {
+    font-size: 2.1rem;
+  }
+
+  .services .body p {
+    font-size: 0.8rem;
+  }
+
+  .services .service {
+    width: 80px;
+    height: 80px;
+  }
+
+  .services .service.big {
+    width: 120px;
+    height: 120px;
+  }
+
 }
