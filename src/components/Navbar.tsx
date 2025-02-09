@@ -7,7 +7,7 @@ function Navbar({ servicesRef }: { servicesRef: MutableRefObject<null | HTMLDivE
     const { t } = useTranslation();
 
     const titleRef = useRef<null | HTMLDivElement>(null);
-    const { scrollYProgress: enteringTitleProgress } = useScroll({ target: servicesRef, offset: ['0% 40%', '0% 38%'] });
+    const { scrollYProgress: enteringTitleProgress } = useScroll({ target: servicesRef, offset: ['1 1.4', '1 1.37'] });
     const titleColor = useTransform(enteringTitleProgress, [0, 1], ['#000', '#fff'])
     // const w = useTransform(enteringTitleProgress, [0, 1], ['0%', '100%'])
     // const c = useTransform(enteringTitleProgress, [0, 1], ['#000', '#fff'])
