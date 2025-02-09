@@ -60,7 +60,7 @@ nav {
 
 .nav-container {
   width: 90vw;
-  margin-left: 5vw;
+  margin: 0 5vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -504,7 +504,7 @@ nav .title {
   .joining ul li p {
     width: 100%;
   }
-  
+
   .joining ul li img {
     margin: 0;
   }
@@ -514,6 +514,7 @@ nav .title {
   .joining ul li .item {
     padding: 80px 40px;
   }
+
   .joining ul li p {
     font-size: 1rem;
   }
@@ -523,7 +524,7 @@ nav .title {
   .joining .joining-img img {
     width: 80vw
   }
-  
+
   .joining h2 {
     font-size: 1.9rem;
   }
@@ -611,5 +612,10 @@ nav .title {
     width: 120px;
     height: 120px;
   }
+}
 
+@media screen and (max-width: 760px) {
+  .services .service.hide {
+    display: none;
+  }
 }

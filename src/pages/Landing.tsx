@@ -148,7 +148,7 @@ function Joining() {
     </div>;
 }
 
-const Service = ({ scrollYProgress, start, end, bg, isBig = false }: { scrollYProgress: any, start: Array<number>, end: Array<number>, bg: string, isBig?: boolean }) => {
+const Service = ({ scrollYProgress, start, end, bg, isBig = false, smallScreenHide = false }: { scrollYProgress: any, start: Array<number>, end: Array<number>, bg: string, isBig?: boolean, smallScreenHide?: boolean }) => {
     const positionX = useTransform(scrollYProgress, [0.5, 0.6], [start[0], end[0]]);
     const positionY = useTransform(scrollYProgress, [0.5, 0.6], [start[1], end[1]]);
 
@@ -156,7 +156,7 @@ const Service = ({ scrollYProgress, start, end, bg, isBig = false }: { scrollYPr
     const springedPositionY = useSpring(positionY);
 
     return <motion.div
-        className={`service ${isBig ? 'big' : ''}`}
+        className={`service ${isBig ? 'big' : ''} ${smallScreenHide ? 'hide' : ''}`}
         style={{ top: springedPositionY, left: springedPositionX, backgroundImage: `url("${bg}")` }} />
 }
 
@@ -183,18 +183,19 @@ const Services = ({ servicesRef }: { servicesRef: MutableRefObject<null | HTMLDi
                 <Service
                     scrollYProgress={scrollYProgress}
                     start={[window.innerWidth / 2.7, window.innerHeight / 4.61]}
-                    end={[window.innerWidth / 3.76, window.innerHeight / 9]}
+                    end={[window.innerWidth / 2.6, window.innerHeight / 9]}
                     bg={"img2.jpg"}
                     isBig={true} />
                 <Service scrollYProgress={scrollYProgress}
                     start={[window.innerWidth / 2.49, window.innerHeight / 2.14]}
-                    end={[window.innerWidth / 13, window.innerHeight / 4]}
+                    end={[window.innerWidth / 7 , window.innerHeight / 5]}
                     bg="img1.jpg" />
                 <Service scrollYProgress={scrollYProgress}
                     start={[window.innerWidth / 2.855, window.innerHeight / 1.88]}
                     end={[window.innerWidth / 7.76, window.innerHeight / 1.71]}
                     bg="img4.jpg"
-                    isBig={true} />
+                    isBig={true}
+                    smallScreenHide={true} />
                 <Service scrollYProgress={scrollYProgress}
                     start={[window.innerWidth / 2.14, window.innerHeight / 1.77]}
                     end={[window.innerWidth / 2.9, window.innerHeight / 1.4]}
@@ -206,17 +207,19 @@ const Services = ({ servicesRef }: { servicesRef: MutableRefObject<null | HTMLDi
                     isBig={true} />
                 <Service scrollYProgress={scrollYProgress}
                     start={[window.innerWidth / 1.95, window.innerHeight / 2.49]}
-                    end={[window.innerWidth / 1.88, window.innerHeight / 6]}
+                    end={[window.innerWidth / 1.38, window.innerHeight / 6]}
                     bg="img7.jpg" />
                 <Service scrollYProgress={scrollYProgress}
                     start={[window.innerWidth / 2, window.innerHeight / 2.05]}
                     end={[window.innerWidth / 1.26, window.innerHeight / 4]}
                     bg="img6.jpg"
-                    isBig={true} />
+                    isBig={true}
+                    smallScreenHide={true} />
                 <Service scrollYProgress={scrollYProgress}
                     start={[window.innerWidth / 2.05, window.innerHeight / 2.37]}
                     end={[window.innerWidth / 1.32, window.innerHeight / 2.05]}
-                    bg="img8.jpg" />
+                    bg="img8.jpg"
+                    smallScreenHide={true} />
             </div>
         </motion.div>
     </motion.div>
