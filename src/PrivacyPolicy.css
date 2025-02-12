@@ -1,3 +1,10 @@
+.privacy {
+    padding: 0 50px 100px
+}
+
+.privacy * {
+    text-align: left;
+}
 
 .privacy h1 {
     color: #000000 !important;
