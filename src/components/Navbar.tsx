@@ -29,7 +29,7 @@ function Navbar({ servicesRef }: { servicesRef: MutableRefObject<null | HTMLDivE
                     <motion.h1 className='title' ref={titleRef} style={{ color: titleColor }}>VolunTeen</motion.h1>
                 </div>
                 <div className='nav-right'>
-                    <button className='nav-btn'>{t("Download-app")}</button>
+                    <a className='nav-btn' href='https://drive.google.com/file/d/1KRHVqaLyhwEI21b5xut1VFEJb3BX98Jm/view' target='_blanc'>{t("Download-app")}</a>
                     <LanguageToggle />
                 </div>
             </div>
