@@ -373,7 +373,7 @@ nav .title {
 
 .features::before {
   content: "";
-  background-color: #0984e3;
+  background-color: #002060;
   position: absolute;
   top: 45%;
   bottom: 0;
